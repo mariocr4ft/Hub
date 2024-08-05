@@ -68,10 +68,6 @@
             <url>https://oss.sonatype.org/content/groups/public/</url>
         </repository>
         <repository>
-            <id>jordanosterberg-repo</id>
-            <url>https://nexus-repo.jordanosterberg.com/repository/maven-releases/</url>
-        </repository>
-        <repository>
             <id>placeholderapi</id>
             <url>https://repo.extendedclip.com/content/repositories/placeholderapi/</url>
         </repository>
