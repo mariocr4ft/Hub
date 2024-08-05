@@ -14,7 +14,7 @@ import java.util.List;
 public class HubItemAction {
 
     public HubItemAction(Player target) {
-        List<String> actions = HubCore.CONFIG_MANAGER.hubItem(target).action();
+        List<String> actions = HubCore.CONFIG_MANAGER.serversListItem(target).action();
 
         actions.forEach(actionString -> {
             String[] stringParams = actionString.split("\\|");
