@@ -3,12 +3,9 @@ package me.invis.hubcore.listener;
 import me.invis.hubcore.HubCore;
 import me.invis.hubcore.config.ConfigManager;
 import me.invis.hubcore.config.managers.*;
-import me.invis.hubcore.util.ItemAction;
+import me.invis.hubcore.config.managers.GameMode;
 import me.invis.hubcore.util.enums.Type;
-import org.bukkit.Bukkit;
-import org.bukkit.Location;
-import org.bukkit.Material;
-import org.bukkit.World;
+import org.bukkit.*;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -16,6 +13,9 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class ClickEvent implements Listener {
     ConfigManager configManager = HubCore.CONFIG_MANAGER;
@@ -58,16 +58,32 @@ public class ClickEvent implements Listener {
         if(!event.getInventory().getName().equalsIgnoreCase(hubInventory.title())) return;
         event.setCancelled(true);
         for(GameMode gameMode : hubInventory.gameModes()) {
+            String command = gameMode.command();
             if(gameMode.itemStack().getItemMeta().getDisplayName().equalsIgnoreCase(event.getCurrentItem().getItemMeta().getDisplayName())) {
-                if(configManager.type() == Type.BUNGEECORD) Bukkit.dispatchCommand(clicker, "server " + gameMode.name());
-
-                else {
-                    World world = Bukkit.getWorld(gameMode.name());
-                    Location l = world.getSpawnLocation();
-                    clicker.teleport(new Location(world, l.getX(), l.getY(), l.getZ()));
+                switch (configManager.type()){
+                    case BUNGEECORD:
+                        Bukkit.dispatchCommand(clicker, "server " + gameMode.name());
+                        break;
+                    case WORLD:
+                        World world = Bukkit.getWorld(gameMode.name());
+                        Location l = world.getSpawnLocation();
+                        clicker.teleport(new Location(world, l.getX(), l.getY(), l.getZ()));
+                        break;
+                    case COMMAND:
+                        commandOK(clicker, command);
                 }
+
             }
         }
 
+    }
+    public void commandOK(Player player, String command){
+        try{
+            player.performCommand(command);
+            Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN+player.getName()+" executed "+command+".");
+
+        } catch(Exception e){
+            e.printStackTrace();
+        }
     }
 }

@@ -24,7 +24,7 @@
   # [v] toggle player visibility
 
 GENERAL-SETTINGS:
-  JOIN_MESSAGE: false
+  JOIN_MESSAGE: true
   LEAVE_MESSAGE: false
   ENTITIES: false
   MOBS: false
@@ -46,7 +46,7 @@ GENERAL-SETTINGS:
   ITEM_THROW: false
 
 # type: BUNGEECORD, WORLD
-TYPE: WORLD
+TYPE: BUNGEECORD
 
 DOUBLE-JUMP:
   ENABLED: true
@@ -56,20 +56,16 @@ DOUBLE-JUMP:
   Y-AXIS: 0.5
 
 SERVER:
-  NAME: '&cAwesome'
+  NAME: '&bWinterLegends'
   LINKS:
-    WEBSITE: 'server.site'
-    STORE: 'store.server.site'
-    DISCORD: 'https://discord.gg/invite'
-    TWITTER: 'https://twitter.com/server'
-    FACEBOOK: 'https://www.facebook.com/groups/4206969420'
-    INSTAGRAM: 'https://www.instagram.com/server'
-    YOUTUBE: 'https://www.youtube.com/channel/UFUCKEDSHITLOLSOMECODEIDK'
+    WEBSITE: 'https://winterlegends.club'
+    STORE: 'https://winterlegends.club/store'
+    DISCORD: 'https://discord.gg/aW8zASZbvr'
+    TWITTER: 'https://twitter.com/winterlegends'
+    FACEBOOK: ''
+    INSTAGRAM: ''
+    YOUTUBE: ''
     TIKTOK: 'https://www.tiktok.com/@server'
-    somelink: 'custom.server.site'
-    someothercustomshit: 'archive.org'
-    examplelink: 'somethinghub.com'
-    examplelink2: 'google.com'
 
 JOIN-TITLE:
   ENABLED: true
@@ -79,7 +75,7 @@ JOIN-TITLE:
 TABLIST:
   ENABLED: true
   HEADER: '<server>'
-  FOOTER: '&aWebsite: &7<WEBSITE> &aStore: &7<STORE> &aWhitelist: &f%server_has_whitelist%'
+  FOOTER: '&BWebsite: &7<WEBSITE> &aStore: &7<STORE>'
 
 JOIN-MESSAGE:
   ENABLED: true
@@ -91,12 +87,10 @@ JOIN-MESSAGE:
     - '&cwebsite: &7<WEBSITE>'
     - '&cstore: &7<STORE>'
     - '&cdiscord: &7<DISCORD>'
-    - '&csome link: &7<somelink>'
-    - '&7fav site: &c<examplelink2>'
     - ''
 
 SIDEBAR:
-  ENABLED: true
+  ENABLED: false
   TITLE: '<server>'
   CONTENT:
     - '&c&m------------------'
@@ -139,7 +133,7 @@ SERVERS-LIST-ITEM:
       CONTENT: '&cHub compass'
     MATERIAL: COMPASS # https://helpch.at/docs/1.8.8/org/bukkit/Material.html
     LORE:
-      CENTERED: true
+      CENTERED: false
       CONTENT:
         - '&7This is the hub compass'
         - '&7It''ll show you the way to our wild server!'
@@ -150,11 +144,8 @@ SERVERS-LIST-ITEM:
   # (RIGHT/LEFT)-CLICK
   TRIGGER: RIGHT-CLICK
   ACTION:
-    - '[m]|&aOpening the hub servers menu for <server>&a, <player>...'
     - '[i]'
     - '[e]|HEART'
-    - '[s]|CAT_MEOW'
-    - '[c]|console|tell <player> Yo, shit opened bro.'
 
 HUB-INVENTORY:
   TITLE: '<server> &8&lservers:'
@@ -176,10 +167,10 @@ HUB-INVENTORY:
 
     GAMEMODES:
       Hub:
-
         # NAME: the name of the server/world (depends on your configuration)
         NAME: 'world'
         SLOT: 22 # 0 => <size>
+        COMMAND: 'put your command here'
         ITEMSTACK:
           NAME:
             CENTERED: false
@@ -193,6 +184,7 @@ HUB-INVENTORY:
       Nether:
         NAME: 'world_nether'
         SLOT: 30 # 0 => <size>
+        COMMAND: 'put your command here'
         ITEMSTACK:
           NAME:
             CENTERED: true
@@ -208,6 +200,7 @@ HUB-INVENTORY:
       The_end:
         NAME: 'world_the_end'
         SLOT: 32 # 0 => <size>
+        COMMAND: 'put your command here'
         ITEMSTACK:
           NAME:
             CENTERED: true

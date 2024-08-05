@@ -95,18 +95,21 @@ public class ConfigManager {
             ConfigurationSection gameModeSection = gameModesSection.getConfigurationSection(gameMode);
             ConfigurationSection itemStackSection = gameModeSection.getConfigurationSection("ITEMSTACK");
 
-            gameModes.add(new GameMode(gameModeSection.getString("NAME"),
-                    gameModeSection.getInt("SLOT"),
-                    itemStackFromConfig(itemStackSection, target)));
+            String name = gameModeSection.getString("NAME");
+            int slot = gameModeSection.getInt("SLOT");
+            ItemStack itemStack = itemStackFromConfig(itemStackSection, target);
+            String command = gameModeSection.getString("COMMAND");
+
+            gameModes.add(new GameMode(name, slot, itemStack, command));
         });
 
-
-
-        return new HubInventory(format(hubInventorySection.getString("TITLE"), false, true),
+        return new HubInventory(
+                format(hubInventorySection.getString("TITLE"), false, true),
                 hubInventorySection.getInt("SIZE"),
                 hubInventorySection.getBoolean("ITEMS.FILL"),
                 itemStackFromConfig(fillItemStackSection, target),
-                gameModes);
+                gameModes
+        );
     }
 
     public Title title(Player target) {

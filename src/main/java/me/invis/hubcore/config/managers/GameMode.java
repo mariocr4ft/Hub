@@ -6,11 +6,13 @@ public class GameMode {
     private final String name;
     private final int slot;
     private final ItemStack itemStack;
+    private final String command; // Nuevo campo
 
-    public GameMode(String name, int slot, ItemStack itemStack) {
+    public GameMode(String name, int slot, ItemStack itemStack, String command) {
         this.name = name;
         this.slot = slot;
         this.itemStack = itemStack;
+        this.command = command;
     }
 
     public String name() {
@@ -25,4 +27,7 @@ public class GameMode {
         return this.itemStack;
     }
 
+    public String command() {
+        return this.command;
+    }
 }

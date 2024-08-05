@@ -4,7 +4,7 @@
   <groupId>HubCore</groupId>
   <artifactId>HubCore</artifactId>
   <name>HubCore</name>
-  <version>3.5.4</version>
+  <version>1.0</version>
   <description>the perfect perfection of a hub core.</description>
   <build>
     <resources>
