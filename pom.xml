@@ -16,7 +16,6 @@
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    <url>me.u.love.amina.she.is.a.latina.as.well.so.big.ass</url>
 
     <build>
         <plugins>
@@ -53,6 +52,14 @@
 
     <repositories>
         <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+        <repository>
+            <id>dmulloy2-repo</id>
+            <url>https://repo.dmulloy2.net/repository/public/</url>
+        </repository>
+        <repository>
             <id>spigotmc-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
@@ -81,8 +88,7 @@
             <groupId>com.comphenix.protocol</groupId>
             <artifactId>ProtocolLib</artifactId>
             <version>4.7.0</version>
-            <scope>system</scope>
-            <systemPath>D:/official-SRCs/HubCore/libs/ProtocolLib.jar</systemPath>
+            <scope>provided</scope>
         </dependency>
         <dependency>
          <groupId>me.clip</groupId>
@@ -91,7 +97,7 @@
          <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>dev.jcsoftware</groupId>
+            <groupId>com.github.JordanOsterberg.JScoreboards</groupId>
             <artifactId>JScoreboards</artifactId>
             <version>2.1.4-RELEASE</version>
         </dependency>
