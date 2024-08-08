@@ -16,7 +16,7 @@ public class CenteredMessage {
 
     private String centeredMessage(String message){
 
-        if(message == null || message.equals("")) return message;
+        if(message == null || message.isEmpty()) return message;
 
         int messagePxSize = 0;
         boolean previousCode = false;

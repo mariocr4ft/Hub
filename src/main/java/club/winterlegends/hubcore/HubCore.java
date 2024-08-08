@@ -24,7 +24,6 @@ public final class HubCore extends JavaPlugin {
     public static ProtocolManager PROTOCOL_MANAGER;
     public static JPerPlayerMethodBasedScoreboard SCOREBOARD;
     public static boolean PAPI;
-    public static HologramHandler HOLOGRAM;
 
 
     @Override

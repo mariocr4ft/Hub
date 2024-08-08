@@ -1,6 +1,5 @@
 package club.winterlegends.hubcore.config.managers;
 
-import club.winterlegends.hubcore.util.enums.Trigger;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.List;
@@ -28,9 +27,6 @@ public class ServersListItem {
         return this.slot;
     }
 
-    public Trigger trigger() {
-        return Trigger.valueOf(this.trigger.replaceAll("-", "_"));
-    }
 
     public List<String> action() {
         return this.action;
