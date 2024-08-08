@@ -1,0 +1,32 @@
+package club.winterlegends.hubcore.commands;
+
+import club.winterlegends.hubcore.HubCore;
+import club.winterlegends.hubcore.config.ConfigManager;
+import club.winterlegends.hubcore.util.holograms.HologramHandler;
+import club.winterlegends.hubcore.util.holograms.HologramInit;
+import eu.decentsoftware.holograms.api.holograms.Hologram;
+import eu.decentsoftware.holograms.api.holograms.HologramPage;
+import org.bukkit.ChatColor;
+import org.bukkit.Location;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+
+public class CreateHologramCommand implements CommandExecutor {
+
+    @Override
+    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        if (!HologramInit.ENABLED) {
+            HologramHandler handler = new HologramHandler();
+            Player player = sender.getServer().getPlayer(sender.getName());
+            Location loc = player.getLocation();
+            Hologram hologram = Hologram.getCachedHologram(HologramHandler.holoID);
+
+
+            return true;
+        }
+        sender.sendMessage("Holograms aren't enabled in the config. Please enable them if you want to use Holograms.");
+        return false;
+    }
+}

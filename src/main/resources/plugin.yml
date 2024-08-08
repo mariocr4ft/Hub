@@ -1,11 +1,12 @@
 name: '${project.name}'
 version: '${project.version}'
-main: me.invis.hubcore.HubCore
+main: club.winterlegends.hubcore.HubCore
 author: Invisibilities
 description: '${project.description}'
 website: '${project.url}'
 depend:
   - ProtocolLib
+  - DecentHolograms
 commands:
   hubcore:
     aliases:
