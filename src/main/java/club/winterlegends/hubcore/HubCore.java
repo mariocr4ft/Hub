@@ -8,7 +8,6 @@ import com.comphenix.protocol.ProtocolLibrary;
 import com.comphenix.protocol.ProtocolManager;
 import dev.jcsoftware.jscoreboards.JPerPlayerMethodBasedScoreboard;
 import club.winterlegends.hubcore.commands.CreateHologramCommand;
-import club.winterlegends.hubcore.util.holograms.HologramHandler;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.Listener;
